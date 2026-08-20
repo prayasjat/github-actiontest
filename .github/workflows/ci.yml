@@ -4,18 +4,20 @@ on:
   push:
     branches:
       - main
-
   pull_request:
     branches:
       - main
 
 jobs:
-  test:
-
+  lint:
     runs-on: ubuntu-latest
-
     steps:
+      - name: Say hello
+        run: echo "Running lint job"
 
+  test:
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -29,19 +31,3 @@ jobs:
 
       - name: Run tests
         run: pytest
-
-jobs:
-
-  lint:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Say hello
-        run: echo "Running lint job"
-
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Say hello
-        run: echo "Running test job"
