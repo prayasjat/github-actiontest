@@ -29,3 +29,19 @@ jobs:
 
       - name: Run tests
         run: pytest
+
+jobs:
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say hello
+        run: echo "Running lint job"
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say hello
+        run: echo "Running test job"
